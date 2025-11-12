@@ -20,17 +20,17 @@
 
         <TextView
             android:id="@+id/tvDate"
-            android:layout_marginTop="4dp"
-            android:textColor="?attr/colorSecondary"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/diary_date_placeholder" />
+            android:layout_height="31dp"
+            android:layout_marginTop="4dp"
+            android:text="@string/diary_date_placeholder"
+            android:textColor="?attr/colorSecondary" />
 
         <TextView
             android:id="@+id/tvContent"
-            android:layout_marginTop="12dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="526dp"
+            android:layout_marginTop="12dp"
             android:text="@string/diary_content_placeholder" />
 
         <LinearLayout

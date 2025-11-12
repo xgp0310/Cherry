@@ -34,8 +34,9 @@
             android:id="@+id/btnOpenDiary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/open_diary"
-            android:layout_marginStart="16dp" />
+            android:layout_marginStart="16dp"
+            android:backgroundTint="@color/faint_yellow"
+            android:text="@string/open_diary" />
 
     </LinearLayout>
 
@@ -43,6 +44,7 @@
             android:id="@+id/btnTestError"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/generate_test_error" />
+            android:text="@string/generate_test_error" 
+            android:visibility="gone" />  
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -8,6 +8,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.google.android.material.appbar.MaterialToolbar
 import timber.log.Timber
+import android.view.View
 
 class CherryActivity : AppCompatActivity(R.layout.activity_diary) {
 
@@ -19,6 +20,20 @@ class CherryActivity : AppCompatActivity(R.layout.activity_diary) {
 
         val toolbar = findViewById<MaterialToolbar>(R.id.topAppBar)
         setSupportActionBar(toolbar)
+
+        // +++ 新增代码开始 +++
+        val btnOpenDiary = findViewById<Button>(R.id.btnOpenDiary)
+
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            // 只在主页面显示打开日记按钮
+            btnOpenDiary.visibility = if (destination.id == R.id.diaryListFragment) {
+                View.VISIBLE
+            } else {
+                View.GONE
+            }
+        }
+        // +++ 新增代码结束 +++
+
         setupActionBarWithNavController(navController)
 
         // 示例按钮，用于测试日志异常输出
@@ -26,8 +41,8 @@ class CherryActivity : AppCompatActivity(R.layout.activity_diary) {
             try {
                 throw RuntimeException("Test exception from button click")
             } catch (e: Exception) {
-                Timber.e(e, "Test error occurred by custom")
-            }
+              Timber.e(e, "Test error occurred by custom")
+           }
         }
 
         // 功能按钮，打开日记编辑界面
